@@ -174,8 +174,14 @@
 // }
 
 // function convert(arr) {
+//     arr = arr.toLowerCase();
 //     arr = arr.split("");
 //     arr[0] = arr[0].toUpperCase();
+//     for (let i = 0; i <= arr.length - 1; i = i + 1) {
+//         if (arr[i] === " ") {
+//             arr[i + 1] = arr[i + 1].toUpperCase();
+//         }
+//     }
 //     return arr.join("");
 // }
 
@@ -205,7 +211,7 @@
 //     }
 // }
 
-// function sochan(arr) { 
+// function sochan(arr) {
 //     let result = [];
 //     for (let i = 0; i <= arr.length - 1; i = i + 1) {
 //         if (arr[i] % 2 === 0 && arr[i] > 0) {
@@ -249,38 +255,38 @@
 // }
 
 //B9
-let loop = true;
-arr = [];
+// let loop = true;
+// arr = [];
 
-while (loop) {
-    let n = prompt(`Nhập số phần tử vào mảng(Nhập stop để dừng) `);
-    let part = prompt(`Bạn muốn chia mảng thành mấy phần?(Nhập stop để dừng) `);
-    if (n.toLowerCase() === "stop" || part.toLowerCase() === "stop") {
-        loop = false;
-        console.log("Dừng");
-        console.log(splitout(arr, part));
-        break;
-    }
-    if (n.trim() === "" || part.trim() === "") {
-        console.log("error");
-    }
-    n = +n;
-    part = +part;
-    if (Number.isNaN(n) || Number.isNaN(part)) {
-        console.log("error");
-    }
-    if (n && part) {
-        arr.push(n);
-        console.log(n);
-    }
-}
-function splitout(arr, part) {
-    if (Number.isInteger(part)) {
-        let newarr = [];
-        let size = Math.ceil(arr.length / part);
-        for (let i = 0; i <= arr.length - 1; i = i + size) {
-            newarr.push(arr.slice(i, size + i));
-        } return newarr;
-    }
+// while (loop) {
+//     let n = prompt(`Nhập số phần tử vào mảng(Nhập stop để dừng) `);
+//     let part = prompt(`Bạn muốn chia mảng thành mấy phần?(Nhập stop để dừng) `);
+//     if (n.toLowerCase() === "stop" || part.toLowerCase() === "stop") {
+//         loop = false;
+//         console.log("Dừng");
+//         console.log(splitout(arr, part));
+//         break;
+//     }
+//     if (n.trim() === "" || part.trim() === "") {
+//         console.log("error");
+//     }
+//     n = +n;
+//     part = +part;
+//     if (Number.isNaN(n) || Number.isNaN(part)) {
+//         console.log("error");
+//     }
+//     if (n && part) {
+//         arr.push(n);
+//         console.log(n);
+//     }
+// }
+// function splitout(arr, part) {
+//     if (Number.isInteger(part)) {
+//         let newarr = [];
+//         let size = Math.ceil(arr.length / part);
+//         for (let i = 0; i <= arr.length - 1; i = i + size) {
+//             newarr.push(arr.slice(i, size + i));
+//         } return newarr;
+//     }
 
-}
+// }
