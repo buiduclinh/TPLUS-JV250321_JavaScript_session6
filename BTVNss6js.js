@@ -249,14 +249,38 @@
 // }
 
 //B9
+let loop = true;
+arr = [];
 
-arr = [1, 2, 3, 4, 5, 6]; 
-part = 3;
-function splitout(arr, part) {
-    let newarr = [];
-    let size = Math.ceil(arr.length / part);
-    for (let i = 0; i <= arr.length - 1; i = i + size) {
-        newarr.push(arr.slice(i, size + i));
-    } return newarr;
+while (loop) {
+    let n = prompt(`Nhập số phần tử vào mảng(Nhập stop để dừng) `);
+    let part = prompt(`Bạn muốn chia mảng thành mấy phần?(Nhập stop để dừng) `);
+    if (n.toLowerCase() === "stop" || part.toLowerCase() === "stop") {
+        loop = false;
+        console.log("Dừng");
+        console.log(splitout(arr, part));
+        break;
+    }
+    if (n.trim() === "" || part.trim() === "") {
+        console.log("error");
+    }
+    n = +n;
+    part = +part;
+    if (Number.isNaN(n) || Number.isNaN(part)) {
+        console.log("error");
+    }
+    if (n && part) {
+        arr.push(n);
+        console.log(n);
+    }
 }
-console.log(splitout(arr, part));
+function splitout(arr, part) {
+    if (Number.isInteger(part)) {
+        let newarr = [];
+        let size = Math.ceil(arr.length / part);
+        for (let i = 0; i <= arr.length - 1; i = i + size) {
+            newarr.push(arr.slice(i, size + i));
+        } return newarr;
+    }
+
+}
